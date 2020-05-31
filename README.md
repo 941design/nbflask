@@ -21,6 +21,11 @@ Create good looking, dynamic reports from jupyter notebooks.
 + `curl http://localhost:5000/pdf?polynome=1,2,3 -o out.pdf` for download
 
 
+## examples
+
+see [examples/test.md](./examples/test.md)
+
+
 ## TODO
 
 + dockerize
@@ -33,3 +38,4 @@ Create good looking, dynamic reports from jupyter notebooks.
 + check vulnerabilities
 + create actual command line interface, using argparse or click
 + add license
++ create kernel via Makefile
