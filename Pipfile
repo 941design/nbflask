@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+jupytext = "*"
+
+[packages]
+flask = "*"
+Flask-Caching = "*"
+ipykernel = "*"
+matplotlib = "*"
+nbconvert = "*"
+nbparameterise = "*"
+numpy = "*"
+pandas = "*"
+
+[scripts]
+app = './src/main.py'
+cli = './src/cli.py'
+
+[requires]
+python_version = "3.7"

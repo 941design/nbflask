@@ -1,0 +1,29 @@
+
+((=- Default to the notebook output style -=))
+((*- if not cell_style is defined -*))
+    ((* set cell_style = 'style_jupyter.tplx' *))
+((*- endif -*))
+
+((=- Inherit from the specified cell style. -=))
+
+((*- extends cell_style -*))
+
+%===============================================================================
+% Latex Article
+%===============================================================================
+
+((*- block docclass -*))
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+
+((*- block author -*))
+    ((*- set nb_author = nb.metadata.get('author', '') or resources['metadata']['author'] -*))
+    \author{((( nb_author | escape_latex )))}
+((*- endblock author -*))
+
+((*- block title -*))
+    ((*- set nb_title = nb.metadata.get('title', '') or resources['metadata']['title'] -*))
+    \title{((( nb_title | escape_latex )))}
+((*- endblock title *))
+
+((*- endblock docclass -*))
