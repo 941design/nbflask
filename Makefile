@@ -1,6 +1,14 @@
 NAME=test
 NOTEBOOK=src/$(NAME).ipynb
-MARKDOWN=$(NAME).md
+MARKDOWN=src/$(NAME).md
+
+
+install:
+	pipenv install --dev
+
+
+install-kernel:
+	export JUPYTER_DATA_DIR=$$(pipenv --venv)/share/jupyter; pipenv run install_kernel
 
 
 to-pdf:
@@ -16,8 +24,13 @@ start:
 
 
 to-md:
-	jupytext --to md --output $(MARKDOWN) $(NOTEBOOK)
+	pipenv run jupytext --to md --output $(MARKDOWN) $(NOTEBOOK)
 
 
 from-md:
-	jupytext --to ipynb --output $(NOTEBOOK) $(MARKDOWN)
+	pipenv run jupytext --to ipynb --output $(NOTEBOOK) $(MARKDOWN)
+
+
+notebook:
+	export PIPENV_DOTENV_LOCATION=./local.env; \
+	pipenv run notebook

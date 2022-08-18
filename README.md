@@ -13,10 +13,21 @@ Create good looking, dynamic reports from jupyter notebooks.
 + develop notebook as usual
 
 
+## requirements
+
++ pandoc
++ latex
+
+
 ## usage
 
-+ `pipenv install` for installing requirements
-+ `pipenv run main.py` for running flask webservice on `http://localhost:5000`
++ `make install` for installing requirements
++ `make install-kernel` install custom jupyter kernel
++ `make to-pdf` to create a pdf from notebook
++ `make to-md` to convert notebook to markdown
++ `make from-md` to create notebook from markdown
++ `make notebook` to start notebook as jupyter notebook in browser
++ `make start` for running flask webservice on `http://localhost:5000`
 + [link](http://localhost:5000/pdf?polynome=1,2,3) for opening in browser
 + `curl http://localhost:5000/pdf?polynome=1,2,3 -o out.pdf` for download
 
