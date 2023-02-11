@@ -11,7 +11,7 @@ jupytext = "*"
 [packages]
 flask = "*"
 Flask-Caching = "*"
-ipython = "<8"
+ipython = "<9"
 jinja2 = "<3"
 jupyter-client = "<7"
 jupyter-core = "<5"
